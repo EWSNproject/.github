@@ -1,11 +1,30 @@
 # 혜택온
+![혜택온](https://github.com/user-attachments/assets/1058bd82-faf5-4986-8bc0-13860706aa16)
 
 
-- 🚀배포사이트 : 
-- 🎥시연영상 : 
+- 🚀배포사이트 : 배포성공~
+- 🎥시연영상 : 준비 중입니다!
 
 ## 🗣 프로젝트 소개
+혜택온은 사용자 맞춤형 복지 추천과 커뮤니티 기반 정보 공유 기능을 중심으로 한 복지 정보 플랫폼입니다.
 
+## 🎯 기획 배경
+정보가 분산되어 접근이 어려운 복지 서비스를 누구나 쉽게 탐색하고, 필요한 정보를 공유할 수 있는 공간을 만들고자 프로젝트를 기획하게 되었습니다.
+
+## 🔍 주요 기능 소개
+### ✅ 1. 사용자 맞춤 복지 추천
+
+- 사용자의 지역, 관심 키워드, 가구 상황 등에 기반한 맞춤형 복지 혜택을 추천합니다.
+- 필터 검색, 자동완성 검색어, 정렬 기능 등을 통해 원하는 복지 정보를 빠르게 탐색할 수 있습니다.
+- 관심 있는 복지 혜택은 북마크 기능을 통해 쉽게 저장하고 확인할 수 있습니다.
+
+### ✅ 2. 커뮤니티 게시판
+
+- 사용자 간 정보 공유를 위한 커뮤니티 기능을 제공합니다.
+- 질문, 자유, 인사 등 게시판 유형별로 구분되어 있으며, 각 게시글에는 이미지 첨부, 태그, 추천 기능 등이 포함됩니다.
+- 댓글, 대댓글, 답변 채택 등 활발한 소통이 가능하며, 신고 및 삭제 기능도 포함되어 있습니다.
+
+</br>
   
 ## ⌛ 개발 기간
 프로젝트 기간 : 2024.01.07 ~ 2024.05.30 <p>
@@ -53,22 +72,137 @@
 
 
 
-
-#### [폴더구조]
-
-
-
-
-
-
 -------------------------------------------------------------------------------------
-# 3. 프론트-백 데이터 연결
+# 3. 시스템 아키텍처 및 데이터 흐름 요약
 
+프로젝트는 React 기반 프론트엔드와 Spring Boot 기반 백엔드로 구성되어 있으며, 다음과 같은 데이터 흐름 구조를 따릅니다.
+
+### 🔁 데이터 흐름 요약
+
+1. 사용자는 Netlify에 배포된 React 웹사이트에 접속하여 게시글 작성, 복지 서비스 검색 등 다양한 기능을 사용합니다.
+2. 프론트는 Axios(`httpClient`)를 통해 Spring Boot API 서버로 HTTP 요청을 보냅니다.
+3. 요청은 Nginx를 거쳐 AWS EC2의 Docker 컨테이너(Spring Boot)로 전달됩니다.
+4. 요청 종류에 따라 백엔드는 다음과 같이 데이터를 처리합니다:
+
+| 데이터 종류                  | 저장소/처리 대상         |
+|-----------------------------|---------------------------|
+| 게시글, 사용자 정보 등       | 🟦 MySQL (AWS RDS)        |
+| 이미지, 파일 등 정적 리소스 | 🟨 AWS S3                 |
+| 키워드 기반 검색 데이터     | 🟩 MongoDB                |
+| 북마크, 세션 등 임시 데이터 | 🟥 Redis                  |
+
+5. 처리된 결과는 JSON으로 프론트에 응답되며, React가 이를 화면에 렌더링합니다.
+
+
+# API 명세서
+<details>
+  <summary>👤 유저 API 명세서 보기</summary>
+
+| API URL | Method | 설명 |
+|---------|--------|------|
+| `/signup` | POST | 회원가입 |
+| `/login` | POST | 로그인 |
+| `/logout` | POST | 로그아웃 |
+| `/users/me` | GET | 내 정보 조회 |
+| `/users/me/profile` | PUT | 프로필 수정 |
+| `/users/me/password` | PUT | 비밀번호 변경 |
+| `/users/me` | DELETE | 회원 탈퇴 |
+| `/users/check-duplicate` | GET | 아이디/닉네임 중복 확인 |
+| `/users/{userId}` | GET | 다른 사용자 정보 조회 |
+| `/users/me/bookmarked/posts` | GET | 내가 북마크한 게시글 조회 |
+| `/users/me/posts` | GET | 내가 작성한 게시글 조회 |
+| `/users/me/recommended/posts` | GET | 내가 추천한 게시글 조회 |
+
+</details>
+
+<details>
+  <summary>📝 게시글/댓글/답변 API 명세서 보기</summary>
+
+| API URL | Method | 설명 |
+|---------|--------|------|
+| `/posts` | POST | 게시글 작성 |
+| `/posts/type` | GET | 게시글 목록 조회 |
+| `/posts/{postId}` | GET | 게시글 상세 조회 |
+| `/posts/{postId}` | PUT | 게시글 수정 |
+| `/posts/{postId}/recommend` | POST | 게시글 추천 |
+| `/posts/{postId}/recommend` | DELETE | 게시글 추천 해제 |
+| `/posts/{postId}/comments` | POST | 댓글 작성 |
+| `/posts/{postId}/comments` | GET | 댓글 목록 조회 |
+| `/posts/{postId}/comments/{commentId}` | DELETE | 댓글 삭제 |
+| `/posts/{postId}/comments/{commentId}/replies` | POST | 대댓글 작성 |
+| `/posts/{postId}/comments/{commentId}/replies` | GET | 대댓글 목록 조회 |
+| `/posts/{postId}/answers` | POST | 답변 작성 |
+| `/posts/{postId}/answers` | GET | 답변 목록 조회 |
+| `/posts/{postId}/answers/{answerId}/select` | PUT | 답변 채택 |
+| `/posts/{postId}/answers/{answerId}` | DELETE | 답변 삭제 |
+| `/mongo/search/posts` | GET | 게시글 검색 |
+| `/mongo/search/posts?searchTerm=` | GET | 통합 게시글 검색 |
+
+</details>
+
+<details>
+  <summary>💡 복지 혜택 API 명세서 보기</summary>
+
+| API URL | Method | 설명 |
+|---------|--------|------|
+| `/services` | GET | 복지 필터 검색 |
+| `/services/detail/{serviceId}` | GET | 복지 상세 조회 |
+| `/services/{id}/bookmark` | POST | 복지 북마크 추가 |
+| `/services/{id}/bookmark` | DELETE | 복지 북마크 삭제 |
+| `/services/filters` | GET | 복지 필터 항목 조회 |
+| `/services/recent` | GET | 최근 복지 서비스 |
+| `/services/popular` | GET | 인기 복지 서비스 |
+| `/mongo/search/services` | GET | 복지 검색 |
+| `/mongo/search/services/autocomplete` | GET | 복지 자동완성 |
+| `/mongo/services/matched` | GET | 맞춤형 복지 추천 |
+| `/interests` | GET | 관심사 목록 조회 |
+| `/interests/me` | GET | 내 관심사 조회 |
+| `/interests/me` | POST | 관심사 저장 |
+| `/search/history` | GET | 검색 기록 조회 |
+| `/search/history/{historyId}` | DELETE | 검색 기록 개별 삭제 |
+| `/search/history` | DELETE | 검색 기록 전체 삭제 |
+
+</details>
+
+<details>
+  <summary>🚨 신고 API 명세서 보기</summary>
+
+| API URL | Method | 설명 |
+|---------|--------|------|
+| `/users/reports` | POST | 사용자 신고 |
+| `/admin/users/reports` | GET | 신고 내역 전체 조회 |
+| `/admin/users/reports/status/{status}` | GET | 신고 상태별 조회 |
+| `/admin/users/reports/{reportId}/resolve` | POST | 신고 승인 처리 |
+| `/admin/users/reports/{reportId}/reject` | POST | 신고 거절 처리 |
+
+</details>
+
+<details>
+  <summary>🛠 관리자 API 명세서 보기</summary>
+
+| API URL | Method | 설명 |
+|---------|--------|------|
+| `/admin/users` | GET | 전체 회원 목록 조회 |
+| `/admin/users/withdrawn` | GET | 탈퇴 회원 목록 조회 |
+| `/admin/users/suspended` | GET | 정지 회원 목록 조회 |
+| `/admin/users/{userId}/suspend` | POST | 회원 정지 |
+| `/admin/users/{userId}/unsuspend` | PUT | 회원 정지 해제 |
+
+</details>
+
+<details>
+  <summary>🤖 챗봇 API 명세서 보기</summary>
+
+| API URL | Method | 설명 |
+|---------|--------|------|
+| `/chatbot` | GET | 챗봇 응답 요청 |
+
+</details>
 
 
  
 -------------------------------------------------------------------------------------
-# 4. 주요기능 💛
+# 4. 실제 동작화면
 #### 자체 웹사이트 로그인/회원가입 기능 
 
 
