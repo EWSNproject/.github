@@ -3,7 +3,7 @@
 
 
 - 🚀배포사이트 : [혜택온](https://hyetaek-on.co.kr/)
-- 🎥시연영상 : [시연영상](https://www.youtube.com/watch?v=DEr0XXMh-MY&feature=youtu.be)
+- 🎥시연영상 : [시연영상](https://www.youtube.com/watch?v=uk-scRTmOhs)
 
 ## 🗣 프로젝트 소개
 혜택온은 사용자 맞춤형 복지 추천과 커뮤니티 기반 정보 공유 기능을 중심으로 한 복지 정보 플랫폼입니다.
