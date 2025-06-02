@@ -212,18 +212,19 @@
 -------------------------------------------------------------------------------------
 # 4. 실제 동작화면
 
-#### ✅ 자체 웹사이트 로그인/회원가입 기능
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/c35a5790-5300-499e-a380-a398c0dc5dff" width="45%" />
-  <img src="https://github.com/user-attachments/assets/6d1d2c32-8200-4f90-a4d5-395f840ba911" width="45%" />
-</div>
+### ✅ 자체 웹사이트 로그인/회원가입 기능
+#### 회원가입
+![혜택온-회원가입2배속](https://github.com/user-attachments/assets/e341e8ff-9341-425a-a0ab-7df6fc5d0fdf)
+
+
+#### 첫로그인이후 키워드 모달창 선택까지
+![혜택온-로그인2배속_1](https://github.com/user-attachments/assets/970bb82b-4c68-48f2-b356-8842e1c3a46f)
+
 
 ---
 
 #### ✅ 로그인 성공 후 키워드 선택 시 메인홈
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/fba8079e-feba-4d1c-b35f-1143b918f34c" width="90%" />
-</div>
+![혜택온-메인홈_2](https://github.com/user-attachments/assets/68b51801-11c4-4bc6-b358-d936e7935df6)
 
 ---
 
