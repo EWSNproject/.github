@@ -252,7 +252,7 @@
 ---
 
 #### ✅ 챗봇
-https://github.com/user-attachments/assets/dc71fb67-e41b-4793-8612-77dc41a5015c
+https://github.com/user-attachments/assets/d7e126c4-f9a8-4269-956c-655743e85df6
 
 
 
