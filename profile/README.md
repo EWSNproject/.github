@@ -252,10 +252,9 @@
 ---
 
 #### ✅ 챗봇
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/4eadffa8-ef48-4d54-a25e-a68d73265a04" width="30%" />
-  <img src="https://github.com/user-attachments/assets/586d904e-5541-46f3-8d09-567c23777567" width="30%" />
-</div>
+https://github.com/user-attachments/assets/dc71fb67-e41b-4793-8612-77dc41a5015c
+
+
 
 
 
