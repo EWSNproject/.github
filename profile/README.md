@@ -228,26 +228,40 @@
 
 ---
 
-#### ✅ 복지혜택 전체보기 & 통합검색 페이지
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/450815ed-61b1-4929-ba35-a759f5e200ef" width="45%" />
-  <img src="https://github.com/user-attachments/assets/b454976f-cb91-4bc5-a931-f549bd5e1d19" width="45%" />
-</div>
+#### ✅ 복지혜택 전체보기
+##### 복지혜택 필터로 검색한 경우
+![혜택온-복지전체-필터-Clipchamp로-제작](https://github.com/user-attachments/assets/17d9ce6f-0426-4579-bb0e-e60794d83909)
+
+
+##### 복지혜택 검색입력창으로 검색한 경우
+![혜택온-전체보기-검색창-Clipchamp로-제작](https://github.com/user-attachments/assets/98de3130-6691-4dd1-9a4e-f750b150c303)
+
+---
+
+#### ✅ 통합검색
+![혜택온-통합검색-Clipchamp로-제작](https://github.com/user-attachments/assets/64f4ab35-fe7c-41d5-a50d-e2ee68bc64b8)
+
+
 
 ---
 
 #### ✅ 혜택온 커뮤니티
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/2ec7c6e5-7f5f-4d5d-98b8-67f5e2e43d83" width="45%" />
-  <img src="https://github.com/user-attachments/assets/53525f8f-c406-4952-84a0-8da2a34aa86f" width="45%" />
-</div>
+##### 게시판 전반적인 기능
+![혜택온-게시판-전반적인-Clipchamp로-제작](https://github.com/user-attachments/assets/43f99dd3-fa3f-4f46-8548-4ab28cab309d)
+
+##### 게시판 글쓰기
+
 
 ---
 
-#### ✅ 마이페이지
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/f0bc79cc-4432-4186-832c-6b44f970319c" width="90%" />
-</div>
+#### ✅ 마이페이지 & 로그아웃
+![혜택온-마이페이지-Clipchamp로-제작](https://github.com/user-attachments/assets/19cbb3b8-05a3-4d06-9d18-ec45aba5db4a)
+
+
+---
+
+#### ✅ 관리자페이지 : 관리자인 경우, 관리자페이지 이동후 신고된 유저관리
+![혜택온-관리자-Clipchamp로-제작](https://github.com/user-attachments/assets/9b174528-dc47-4616-9b71-93aa69bb7f24)
 
 ---
 
