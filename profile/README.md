@@ -242,14 +242,19 @@
 ![혜택온-통합검색-Clipchamp로-제작](https://github.com/user-attachments/assets/64f4ab35-fe7c-41d5-a50d-e2ee68bc64b8)
 
 
-
 ---
 
 #### ✅ 혜택온 커뮤니티
 ##### 게시판 전반적인 기능
 ![혜택온-게시판-전반적인-Clipchamp로-제작](https://github.com/user-attachments/assets/43f99dd3-fa3f-4f46-8548-4ab28cab309d)
 
+
 ##### 게시판 글쓰기
+![혜택온-글쓰기-Clipchamp로-제작](https://github.com/user-attachments/assets/3345cc57-150b-463b-bfdd-b4416f7ef370)
+
+
+##### 게시판 글쓰기 : 질문게시판-채택기능
+![혜택온-채택기능-Clipchamp로-제작](https://github.com/user-attachments/assets/550a2792-584b-4e7d-ae89-a18db19248ba)
 
 
 ---
